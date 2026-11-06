@@ -1,0 +1,64 @@
+{
+  "mode": "PAPER",
+  "exchange": "DELTA",
+  "symbol": "BTCUSD",
+  "timeframe": "15m",
+  "currency": "INR",
+  "inr_usdt_rate": 86.50,
+  "account": {
+    "starting_capital_inr": 10000.0,
+    "starting_capital_usdt": 115.60,
+    "risk_per_trade_pct": 0.030,
+    "max_daily_loss_pct": 0.10,
+    "max_leverage": 10,
+    "max_open_positions": 1,
+    "reset_frequency": "MONTHLY"
+  },
+  "strategy": {
+    "strategy_name": "STRATEGY_4_MARKOV_1TO15",
+    "markov_window": 10,
+    "markov_thresh": 0.02,
+    "ema_fast": 20,
+    "ema_slow": 50,
+    "atr_period": 14,
+    "sl_atr_mult": 2.0,
+    "rr_ratio": 15.0,
+    "max_hold_bars": 120,
+    "min_rvol": 1.20,
+    "min_wick_ratio": 0.15,
+    "rvol_ma_len": 20,
+    "pullback_tolerance_pct": 0.002
+  },
+  "grid": {
+    "enabled": false
+  },
+  "regime": {
+    "mode": "PURE_MARKOV",
+    "grid_months": [],
+    "normal_months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "transition_policy": "DISABLED"
+  },
+  "session": {
+    "filter_enabled": false
+  },
+  "friction": {
+    "maker_fee_pct": 0.00020,
+    "taker_fee_pct": 0.00030,
+    "slippage_bps": 1.0
+  },
+  "api": {
+    "delta_environment": "testnet",
+    "delta_base_url": "https://cdn-ind.testnet.deltaex.org",
+    "delta_pub_wss": "wss://socket-ind-pub.testnet.deltaex.org",
+    "delta_prv_wss": "wss://socket-ind.testnet.deltaex.org",
+    "delta_api_key": "",
+    "delta_api_secret": "",
+    "trading_enabled": true
+  },
+  "live": {
+    "poll_interval_sec": 5,
+    "log_level": "INFO",
+    "save_trade_history": true,
+    "trade_history_file": "reports/live_trades.csv"
+  }
+}
